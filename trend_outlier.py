@@ -21,7 +21,6 @@ def calculate_outliers(y):
     print(f'threshold: {threshold}')
     # Outliers calculated on aligned_y
     outliers = []
-
     for i in range(len(y)):
         data_value = y[i]
         trend_value = trend[i]
@@ -49,8 +48,8 @@ def plot(y, trend, outliers):
     outliers_x = [x[i] for i in range(len(x)) if outliers[i]]
     outliers_y = [y[i] for i in range(len(y)) if outliers[i]]
 
-    plt.scatter(non_outliers_x, non_outliers_y, color='blue', label='Non-Outliers', marker='+')
-    plt.scatter(outliers_x, outliers_y, color='red', label='Outliers', marker='x')
+    plt.scatter(non_outliers_x, non_outliers_y, color='blue', label='Non-Outliers', marker='+', s=100)
+    plt.scatter(outliers_x, outliers_y, color='red', label='Outliers', marker='x', s=100)
 
     # plots the line calculated with linear regression
     plt.plot(x, trend, color='blue')
